@@ -8,10 +8,17 @@ import javax.swing.JOptionPane;
 public class Principal {
 
     public static void main(String[] args) {
+
+        //Cineminha menuPrincipal = new Cineminha();
+        //menuPrincipal.menuLogin();
+
+        //--Tela de cadastro Funcionário
+        //TelaFuncionario teste = new TelaFuncionario();
+        //teste.menuFuncionario();
         
-        Cineminha menuPrincipal = new Cineminha();
-        
-        menuPrincipal.menuLogin();
+        //--Tela de cadastro Filme
+        TelaFilme teste = new TelaFilme();
+        teste.menuFilme();
     }
 
 }

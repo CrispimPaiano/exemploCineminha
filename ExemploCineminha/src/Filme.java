@@ -17,10 +17,10 @@ public class Filme {
     int atual = 0;
 
     private void informaçãoFilme(int posicao) {
-        nomesFilme[posicao] = JOptionPane.showInputDialog(null, "Digite o nome do filme");
+        nomesFilme[posicao] = JOptionPane.showInputDialog("Digite o nome do filme");
         faixaEtaria[posicao] = Integer.parseInt(JOptionPane.showInputDialog(nomesFilme[posicao] + ": digite a faixa etária \"Ex.: 18\""));
-        precosFilme[posicao] = Double.parseDouble(JOptionPane.showInputDialog(nomesFilme[posicao] + " digite o preço do ingresso"));
-        horaFilme[posicao] = Integer.parseInt(JOptionPane.showInputDialog(nomesFilme[posicao] + " digite o seu CPF"));
+        precosFilme[posicao] = Double.parseDouble(JOptionPane.showInputDialog(nomesFilme[posicao] + ": digite o preço do ingresso"));
+        horaFilme[posicao] = Integer.parseInt(JOptionPane.showInputDialog(nomesFilme[posicao] + ": digite o tempo de duração"));
         generoFilme[posicao] = JOptionPane.showInputDialog("Digite o gênero do filme");
         diretorFilme[posicao] = JOptionPane.showInputDialog("Digite o nome do Diretor");
         lancamentoFilme[posicao] = Integer.parseInt(JOptionPane.showInputDialog("Digite o ano de lançamento"));
