@@ -9,3 +9,4 @@ ExemploCineminha/nbproject/project.xml
 *.xml
 *.mf
 *.properties
+/build/
