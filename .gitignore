@@ -5,3 +5,7 @@ ExemploCineminha/nbproject/build-impl.xml
 ExemploCineminha/nbproject/genfiles.properties
 ExemploCineminha/nbproject/project.properties
 ExemploCineminha/nbproject/project.xml
+/nbproject/private/
+*.xml
+*.mf
+*.properties
