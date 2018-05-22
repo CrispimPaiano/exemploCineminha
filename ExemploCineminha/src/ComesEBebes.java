@@ -15,8 +15,8 @@ public class ComesEBebes {
                 + "\n2 - Bebidas"
                 + "\n3 - Nada"));
         int qtdComes = 0;
-        Double[] precoComida = new Double[100];
-        Double[] precoBebida = new Double[100];
+        Double precoComida = 0.0;
+        Double precoBebida = 0.0;
         Double precoTotal = 0.0;
         int tabelaComplemento = 0;
         while (tabelaPedido != 3) {
@@ -188,5 +188,6 @@ public class ComesEBebes {
             JOptionPane.showInputDialog("O valor total é de: " + precoTotal);
             atual++;
         }
+        JOptionPane.showInputDialog("O valor total é de: " + precoTotal);
     }
 }
