@@ -1,11 +1,11 @@
+
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author Leonardo Airam Vieira
  */
 public class ComesEBebes {
-    
-    int atual=0;
 
     public void infoPedido() {
 
@@ -15,10 +15,12 @@ public class ComesEBebes {
                 + "\n2 - Bebidas"
                 + "\n3 - Nada"));
         int qtdComes = 0;
+        int qtdBebes = 0;
         Double precoComida = 0.0;
         Double precoBebida = 0.0;
         Double precoTotal = 0.0;
         int tabelaComplemento = 0;
+        int qtdComplementos = 0;
         while (tabelaPedido != 3) {
 
             if (tabelaPedido == 1) {
@@ -35,7 +37,7 @@ public class ComesEBebes {
                 if (tabelaComidas == 1) {
                     qtdComes = Integer.parseInt(JOptionPane.showInputDialog(
                             "Quantas pipocas pequenas quer comprar?"));
-                    precoComida[atual] += 20.00 * qtdComes;
+                    precoComida += 20.00 * qtdComes;
                     int opcao = JOptionPane.showOptionDialog(null,
                             "Deseja algum complemento?", "Complementos",
                             0,
@@ -53,15 +55,50 @@ public class ComesEBebes {
                                 + "\n3 - Chocolate branco - R$4,00"
                                 + "\n4 - Calda especial da casa - R$8,00"
                                 + "\n5 - Sair"));
-
                         if (tabelaComplemento == 1) {
-                            precoComida[atual] += 5.00;
+                            qtdComplementos = Integer.parseInt(JOptionPane.showInputDialog(
+                                    "Em quantas pipocas  deseja esse complemento?"));
+                            if (qtdComplementos > qtdComes) {
+                                JOptionPane.showMessageDialog(null,
+                                        "Você tem menos pipocas do que complementos");
+                            } else if (qtdComplementos == qtdComes) {
+                                precoComida += 5.00*qtdComplementos;
+                            }else{
+                                precoComida += 5.00;
+                            }
                         } else if (tabelaComplemento == 2) {
-                            precoComida[atual] += 3.00;
+                            qtdComplementos = Integer.parseInt(JOptionPane.showInputDialog(
+                                    "Em quantas pipocas  deseja esse complemento?"));
+                            if (qtdComplementos > qtdComes) {
+                                JOptionPane.showMessageDialog(null,
+                                        "Você tem menos pipocas do que complementos");
+                            } else if (qtdComplementos == qtdComes) {
+                                precoComida += 3.00*qtdComplementos;
+                            }else{
+                                precoComida += 3.00;
+                            }
                         } else if (tabelaComplemento == 3) {
-                            precoComida[atual] += 4.00;
+                            qtdComplementos = Integer.parseInt(JOptionPane.showInputDialog(
+                                    "Em quantas pipocas  deseja esse complemento?"));
+                            if (qtdComplementos > qtdComes) {
+                                JOptionPane.showMessageDialog(null,
+                                        "Você tem menos pipocas do que complementos");
+                            } else if (qtdComplementos == qtdComes) {
+                                precoComida += 4.00*qtdComplementos;
+                            }else{
+                                precoComida += 4.00;
+                            }
                         } else if (tabelaComplemento == 4) {
-                            precoComida[atual] += 8.00;
+                            qtdComplementos = Integer.parseInt(JOptionPane.showInputDialog(
+                                    "Em quantas pipocas  deseja esse complemento?"));
+                            if (qtdComplementos > qtdComes) {
+                                JOptionPane.showMessageDialog(null,
+                                        "Você tem menos pipocas do que complementos");
+                            } else if (qtdComplementos == qtdComes) {
+                                precoComida += 8.00*qtdComplementos;
+                            }else{
+                                precoComida += 8.00;
+                            }
                         } else {
                         }
                     } else {
@@ -69,7 +106,7 @@ public class ComesEBebes {
                 } else if (tabelaComidas == 2) {
                     qtdComes = Integer.parseInt(JOptionPane.showInputDialog(
                             "Quantas pipocas médias quer comprar?"));
-                    precoComida[atual] += 30.00 * qtdComes;
+                    precoComida += 30.00 * qtdComes;
                     int opcao = JOptionPane.showOptionDialog(null,
                             "Deseja algum complemento?", "Complementos",
                             0,
@@ -89,22 +126,22 @@ public class ComesEBebes {
                                 + "\n5 - Sair"));
 
                         if (tabelaComplemento == 1) {
-                            precoComida[atual] += 5.00;
+                            precoComida += 5.00;
                         } else if (tabelaComplemento == 2) {
-                            precoComida[atual] += 3.00;
+                            precoComida += 3.00;
                         } else if (tabelaComplemento == 3) {
-                            precoComida[atual] += 4.00;
+                            precoComida += 4.00;
                         } else if (tabelaComplemento == 4) {
-                            precoComida[atual] += 8.00;
+                            precoComida += 8.00;
                         } else {
 
                         }
                     } else {
                     }
-                } else if (tabelaComidas == 3){
+                } else if (tabelaComidas == 3) {
                     qtdComes = Integer.parseInt(JOptionPane.showInputDialog(
                             "Quantas pipocas grandes quer comprar?"));
-                    precoComida[atual] += 30.00 * qtdComes;
+                    precoComida += 30.00 * qtdComes;
                     int opcao = JOptionPane.showOptionDialog(null,
                             "Deseja algum complemento?", "Complementos",
                             0,
@@ -124,13 +161,13 @@ public class ComesEBebes {
                                 + "\n5 - Sair"));
 
                         if (tabelaComplemento == 1) {
-                            precoComida[atual] += 5.00;
+                            precoComida += 5.00;
                         } else if (tabelaComplemento == 2) {
-                            precoComida[atual] += 3.00;
+                            precoComida += 3.00;
                         } else if (tabelaComplemento == 3) {
-                            precoComida[atual] += 4.00;
+                            precoComida += 4.00;
                         } else if (tabelaComplemento == 4) {
-                            precoComida[atual] += 8.00;
+                            precoComida += 8.00;
                         } else {
 
                         }
@@ -139,43 +176,58 @@ public class ComesEBebes {
                 } else if (tabelaComidas == 4) {
                     qtdComes = Integer.parseInt(JOptionPane.showInputDialog(
                             "Quantos bibs quer comprar?"));
-                    precoComida[atual] += 7.00 * qtdComes;
+                    precoComida += 7.00 * qtdComes;
                 } else if (tabelaComidas == 5) {
                     qtdComes = Integer.parseInt(JOptionPane.showInputDialog(
                             "Quantos chocolates quer comprar?"));
-                    precoComida[atual] += 3.00 * qtdComes;
+                    precoComida += 3.00 * qtdComes;
                 } else if (tabelaComidas == 6) {
                     qtdComes = Integer.parseInt(JOptionPane.showInputDialog(
                             "Quantas balinhas fini quer comprar?"));
-                    precoComida[atual] += 6.00 * qtdComes;
-                } else {
+                    precoComida += 6.00 * qtdComes;
+                } else if (tabelaComidas > 7) {
+                    JOptionPane.showMessageDialog(null, "Opção inválida");
                 }
             } else if (tabelaPedido == 2) {
                 int tabelaBebidas = Integer.parseInt(JOptionPane.showInputDialog(
                         "Que petisquinhos deseja?"
-                        + "\n1 - Bebida P - R$7,99"
-                        + "\n2 - Beboda M - R$9,99"
-                        + "\n3 - Bebida G - R$11,99"
+                        + "\n1 - Refrigerante P - R$7,99"
+                        + "\n2 - Refrigerante M - R$9,99"
+                        + "\n3 - Refrigerante G - R$11,99"
                         + "\n4 - Água c/ gás - R$4,00"
                         + "\n5 - Água s/ gás - R$3,50"
                         + "\n6 - Suquinho - R$6,00"
                         + "\n7 - Sair"));
 
                 if (tabelaBebidas == 1) {
-                    precoBebida[atual] += 7.99;
+                    qtdBebes = Integer.parseInt(JOptionPane.showInputDialog(
+                            "Quantos refrigerante pequenas quer comprar?"));
+                    precoBebida += 7.99 * qtdBebes;
                 } else if (tabelaBebidas == 2) {
-                    precoBebida[atual] += 9.99;
+                    qtdBebes = Integer.parseInt(JOptionPane.showInputDialog(
+                            "Quantos refrigerante médias quer comprar?"));
+                    precoBebida += 9.99 * qtdBebes;
                 } else if (tabelaBebidas == 3) {
-                    precoBebida[atual] += 11.99;
+                    qtdBebes = Integer.parseInt(JOptionPane.showInputDialog(
+                            "Quantos refrigerante grandes quer comprar?"));
+                    precoBebida += 11.99 * qtdBebes;
                 } else if (tabelaBebidas == 4) {
-                    precoBebida[atual] += 4.00;
+                    qtdBebes = Integer.parseInt(JOptionPane.showInputDialog(
+                            "Quantas Água c/ gás quer comprar?"));
+                    precoBebida += 4.00 * qtdBebes;
                 } else if (tabelaBebidas == 5) {
-                    precoBebida[atual] += 3.50;
+                    qtdBebes = Integer.parseInt(JOptionPane.showInputDialog(
+                            "Quantas Água s/ gás quer comprar?"));
+                    precoBebida += 3.50 * qtdBebes;
                 } else if (tabelaBebidas == 6) {
-                    precoBebida[atual] += 6.00;
-                } else {
-
+                    qtdBebes = Integer.parseInt(JOptionPane.showInputDialog(
+                            "Quantos suquinhos quer comprar?"));
+                    precoBebida += 6.00 * qtdBebes;
+                } else if (tabelaBebidas > 7) {
+                    JOptionPane.showMessageDialog(null, "Opção inválida");
                 }
+            } else if (tabelaPedido == 3) {
+                JOptionPane.showMessageDialog(null, "Obrigado pela preferência");
             } else {
                 JOptionPane.showMessageDialog(null, "Opção inválida");
             }
@@ -184,10 +236,12 @@ public class ComesEBebes {
                     + "\n1 - Comidas"
                     + "\n2 - Bebidas"
                     + "\n3 - Nada"));
-            precoTotal = precoComida[atual] + precoBebida[atual];
-            JOptionPane.showInputDialog("O valor total é de: " + precoTotal);
-            atual++;
+            precoTotal = precoComida + precoBebida;
         }
-        JOptionPane.showInputDialog("O valor total é de: " + precoTotal);
+        if (precoTotal == 0) {
+            JOptionPane.showMessageDialog(null, "Um filme sem comes e bebes é um filme vazio");
+        } else {
+            JOptionPane.showMessageDialog(null, "O valor total é de: " + precoTotal + "\nBom filme");
+        }
     }
 }
