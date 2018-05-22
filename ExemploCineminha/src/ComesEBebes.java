@@ -20,6 +20,7 @@ public class ComesEBebes {
                 + "\n2 - Bebidas"
                 + "\n3 - Nada"));
         int qtdComes = 0;
+        int qtdBebes = 0;
         Double precoComida = 0.0;
         Double precoBebida = 0.0;
         Double precoTotal = 0.0;
@@ -106,7 +107,7 @@ public class ComesEBebes {
                         }
                     } else {
                     }
-                } else if (tabelaComidas == 3){
+                } else if (tabelaComidas == 3) {
                     qtdComes = Integer.parseInt(JOptionPane.showInputDialog(
                             "Quantas pipocas grandes quer comprar?"));
                     precoComida += 30.00 * qtdComes;
@@ -158,29 +159,43 @@ public class ComesEBebes {
             } else if (tabelaPedido == 2) {
                 int tabelaBebidas = Integer.parseInt(JOptionPane.showInputDialog(
                         "Que petisquinhos deseja?"
-                        + "\n1 - Bebida P - R$7,99"
-                        + "\n2 - Beboda M - R$9,99"
-                        + "\n3 - Bebida G - R$11,99"
+                        + "\n1 - Refrigerante P - R$7,99"
+                        + "\n2 - Refrigerante M - R$9,99"
+                        + "\n3 - Refrigerante G - R$11,99"
                         + "\n4 - Água c/ gás - R$4,00"
                         + "\n5 - Água s/ gás - R$3,50"
                         + "\n6 - Suquinho - R$6,00"
                         + "\n7 - Sair"));
 
                 if (tabelaBebidas == 1) {
-                    precoBebida += 7.99;
+                    qtdBebes = Integer.parseInt(JOptionPane.showInputDialog(
+                            "Quantos refrigerante pequenas quer comprar?"));
+                    precoBebida += 7.99 * qtdBebes;
                 } else if (tabelaBebidas == 2) {
-                    precoBebida += 9.99;
+                    qtdBebes = Integer.parseInt(JOptionPane.showInputDialog(
+                            "Quantos refrigerante médias quer comprar?"));
+                    precoBebida += 9.99 * qtdBebes;
                 } else if (tabelaBebidas == 3) {
-                    precoBebida += 11.99;
+                    qtdBebes = Integer.parseInt(JOptionPane.showInputDialog(
+                            "Quantos refrigerante grandes quer comprar?"));
+                    precoBebida += 11.99 * qtdBebes;
                 } else if (tabelaBebidas == 4) {
-                    precoBebida += 4.00;
+                    qtdBebes = Integer.parseInt(JOptionPane.showInputDialog(
+                            "Quantas Água c/ gás quer comprar?"));
+                    precoBebida += 4.00 * qtdBebes;
                 } else if (tabelaBebidas == 5) {
-                    precoBebida += 3.50;
+                    qtdBebes = Integer.parseInt(JOptionPane.showInputDialog(
+                            "Quantas Água s/ gás quer comprar?"));
+                    precoBebida += 3.50 * qtdBebes;
                 } else if (tabelaBebidas == 6) {
-                    precoBebida += 6.00;
+                    qtdBebes = Integer.parseInt(JOptionPane.showInputDialog(
+                            "Quantos suquinhos quer comprar?"));
+                    precoBebida += 6.00 * qtdBebes;
                 } else {
 
                 }
+            } else if (tabelaPedido == 3) {
+                JOptionPane.showMessageDialog(null, "Obrigado pela preferência");
             } else {
                 JOptionPane.showMessageDialog(null, "Opção inválida");
             }
@@ -191,6 +206,10 @@ public class ComesEBebes {
                     + "\n3 - Nada"));
             precoTotal = precoComida + precoBebida;
         }
-        JOptionPane.showInputDialog("O valor total é de: " + precoTotal);
+        if(precoTotal == 0){
+            JOptionPane.showMessageDialog(null, "Um filme sem comes e bebes é um filme vazio");
+        }else{
+        JOptionPane.showMessageDialog(null, "O valor total é de: " + precoTotal+"\nBom filme");
+        }
     }
 }
