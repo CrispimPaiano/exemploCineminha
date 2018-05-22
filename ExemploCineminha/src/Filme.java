@@ -112,8 +112,8 @@ public class Filme {
     public void apresentarEstatisticas() {
         JOptionPane.showMessageDialog(null, 
                 "Quantidades de filmes: "+atual
-               +"Filme mais antigo: "+filmeAntigo+" ano:"+anoFilmeAntigo
-               +"Filme mais novo: "+filmeNovo+" ano:"+anoFilmeNovo 
+               +"\nFilme mais antigo: "+filmeAntigo+" ano: "+anoFilmeAntigo
+               +"\nFilme mais novo: "+filmeNovo+" ano: "+anoFilmeNovo 
         );
     }
 
