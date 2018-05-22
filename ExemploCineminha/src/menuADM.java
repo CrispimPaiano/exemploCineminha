@@ -23,6 +23,7 @@ public class menuADM {
         while(menu != 3){
             switch (menu) {
                 case 1:
+                    
                     break;
                 case 2:
                     break;

@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
  */
 /**
  *
- * @author Alunos
+ * @author Leonardo Airam Vieira
  */
 public class Cliente {
 
