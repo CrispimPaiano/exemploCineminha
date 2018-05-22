@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 public class menuFuncionario {
     
     Cliente menuCliente = new Cliente();
-    
+    ComesEBebes menuComeBebe = new ComesEBebes();
     public void menuFunc(){
         
         int menu = Integer.parseInt(JOptionPane.showInputDialog(
@@ -23,12 +23,12 @@ public class menuFuncionario {
                 "\n3 - Sair"));
         while(menu != 3){
             switch (menu) {
-                
                 case 1: 
-                    menuCliente.infoCliente(menu);
+                    menuCliente.infoCliente();
                     break;
                     
                 case 2:
+                    menuComeBebe.infoPedido();
                     break;
                     
                 default:
