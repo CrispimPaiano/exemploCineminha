@@ -1,16 +1,11 @@
-
 import javax.swing.JOptionPane;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
  *
  * @author Leonardo Airam Vieira
  */
 public class ComesEBebes {
+    
+    int atual=0;
 
     public void infoPedido() {
 
@@ -41,7 +36,7 @@ public class ComesEBebes {
                 if (tabelaComidas == 1) {
                     qtdComes = Integer.parseInt(JOptionPane.showInputDialog(
                             "Quantas pipocas pequenas quer comprar?"));
-                    precoComida += 20.00 * qtdComes;
+                    precoComida[atual] += 20.00 * qtdComes;
                     int opcao = JOptionPane.showOptionDialog(null,
                             "Deseja algum complemento?", "Complementos",
                             0,
@@ -61,13 +56,13 @@ public class ComesEBebes {
                                 + "\n5 - Sair"));
 
                         if (tabelaComplemento == 1) {
-                            precoComida += 5.00;
+                            precoComida[atual] += 5.00;
                         } else if (tabelaComplemento == 2) {
-                            precoComida += 3.00;
+                            precoComida[atual] += 3.00;
                         } else if (tabelaComplemento == 3) {
-                            precoComida += 4.00;
+                            precoComida[atual] += 4.00;
                         } else if (tabelaComplemento == 4) {
-                            precoComida += 8.00;
+                            precoComida[atual] += 8.00;
                         } else {
                         }
                     } else {
@@ -75,7 +70,7 @@ public class ComesEBebes {
                 } else if (tabelaComidas == 2) {
                     qtdComes = Integer.parseInt(JOptionPane.showInputDialog(
                             "Quantas pipocas médias quer comprar?"));
-                    precoComida += 30.00 * qtdComes;
+                    precoComida[atual] += 30.00 * qtdComes;
                     int opcao = JOptionPane.showOptionDialog(null,
                             "Deseja algum complemento?", "Complementos",
                             0,
@@ -95,13 +90,13 @@ public class ComesEBebes {
                                 + "\n5 - Sair"));
 
                         if (tabelaComplemento == 1) {
-                            precoComida += 5.00;
+                            precoComida[atual] += 5.00;
                         } else if (tabelaComplemento == 2) {
-                            precoComida += 3.00;
+                            precoComida[atual] += 3.00;
                         } else if (tabelaComplemento == 3) {
-                            precoComida += 4.00;
+                            precoComida[atual] += 4.00;
                         } else if (tabelaComplemento == 4) {
-                            precoComida += 8.00;
+                            precoComida[atual] += 8.00;
                         } else {
 
                         }
@@ -110,7 +105,7 @@ public class ComesEBebes {
                 } else if (tabelaComidas == 3) {
                     qtdComes = Integer.parseInt(JOptionPane.showInputDialog(
                             "Quantas pipocas grandes quer comprar?"));
-                    precoComida += 30.00 * qtdComes;
+                    precoComida[atual] += 30.00 * qtdComes;
                     int opcao = JOptionPane.showOptionDialog(null,
                             "Deseja algum complemento?", "Complementos",
                             0,
@@ -130,13 +125,13 @@ public class ComesEBebes {
                                 + "\n5 - Sair"));
 
                         if (tabelaComplemento == 1) {
-                            precoComida += 5.00;
+                            precoComida[atual] += 5.00;
                         } else if (tabelaComplemento == 2) {
-                            precoComida += 3.00;
+                            precoComida[atual] += 3.00;
                         } else if (tabelaComplemento == 3) {
-                            precoComida += 4.00;
+                            precoComida[atual] += 4.00;
                         } else if (tabelaComplemento == 4) {
-                            precoComida += 8.00;
+                            precoComida[atual] += 8.00;
                         } else {
 
                         }
@@ -145,15 +140,15 @@ public class ComesEBebes {
                 } else if (tabelaComidas == 4) {
                     qtdComes = Integer.parseInt(JOptionPane.showInputDialog(
                             "Quantos bibs quer comprar?"));
-                    precoComida += 7.00 * qtdComes;
+                    precoComida[atual] += 7.00 * qtdComes;
                 } else if (tabelaComidas == 5) {
                     qtdComes = Integer.parseInt(JOptionPane.showInputDialog(
                             "Quantos chocolates quer comprar?"));
-                    precoComida += 3.00 * qtdComes;
+                    precoComida[atual] += 3.00 * qtdComes;
                 } else if (tabelaComidas == 6) {
                     qtdComes = Integer.parseInt(JOptionPane.showInputDialog(
                             "Quantas balinhas fini quer comprar?"));
-                    precoComida += 6.00 * qtdComes;
+                    precoComida[atual] += 6.00 * qtdComes;
                 } else {
                 }
             } else if (tabelaPedido == 2) {
@@ -205,6 +200,8 @@ public class ComesEBebes {
                     + "\n2 - Bebidas"
                     + "\n3 - Nada"));
             precoTotal = precoComida + precoBebida;
+            JOptionPane.showInputDialog("O valor total é de: " + precoTotal);
+            atual++;
         }
         if(precoTotal == 0){
             JOptionPane.showMessageDialog(null, "Um filme sem comes e bebes é um filme vazio");

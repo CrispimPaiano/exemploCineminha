@@ -16,12 +16,13 @@ public class Cliente {
     int[] idades = new int[100];
     String[] temasPref = new String[100];
     String[] comesBebesPref = new String[100];
+    int atual = 0;
 
-    public void infoCliente(int i) {
+    public void infoCliente() {
 
-        nomes[i] = JOptionPane.showInputDialog("Qual seu nome?");
-        idades[i] = Integer.parseInt(JOptionPane.showInputDialog("Qual sua idade?"));
-        temasPref[i] = JOptionPane.showInputDialog("Seu gênero de filme preferido");
-        comesBebesPref[i] = JOptionPane.showInputDialog("Qual sua combinação preferida                                                        de comes e bebes?");
+        nomes[atual] = JOptionPane.showInputDialog("Qual seu nome?");
+        idades[atual] = Integer.parseInt(JOptionPane.showInputDialog("Qual sua idade?"));
+        temasPref[atual] = JOptionPane.showInputDialog("Seu gênero de filme preferido");
+        comesBebesPref[atual] = JOptionPane.showInputDialog("Qual sua combinação preferida                                                        de comes e bebes?");
     }
 }

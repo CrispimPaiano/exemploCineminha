@@ -23,6 +23,13 @@ public class Principal {
         //--Tela Administrativa
         //menuADM menuzinho = new menuADM();
         //menuzinho.menuAdmin();
+<<<<<<< HEAD
+        
+        //--Tela Funcionario
+        menuFuncionario menuzinhofun = new menuFuncionario();
+        menuzinhofun.menuFunc();
+=======
+>>>>>>> 15094439c7603b2e37ed013bcb1e48ce6acbe83c
         
         //--Tela Comes e Bebes
         ComesEBebes menuComesBebes = new ComesEBebes();
