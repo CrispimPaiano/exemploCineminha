@@ -1,39 +1,37 @@
 
 import javax.swing.JOptionPane;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
- * @author Leonardo Airam Vieira
+ * @author Leonardo Airam Vieira e Crispim Paiano dos Santos
  */
 public class menuADM {
-    
-    public void menuAdmin(){
-        
-        
+
+    TelaFuncionario funcionarioMenu = new TelaFuncionario();
+    TelaFilme filmeMenu = new TelaFilme();
+
+    public void menuAdmin() {
+
         int menu = Integer.parseInt(JOptionPane.showInputDialog(
-                "1 - Adicionar filmes"+
-                "\n2 - Adicionar funcionários"+
-                "\n3 - Sair"));
-        while(menu != 3){
+                "1 - Adicionar funcionários"
+                + "\n2 - Adicionar filmes"
+                + "\n3 - Sair"));
+        while (menu != 3) {
             switch (menu) {
                 case 1:
+                    funcionarioMenu.menuFuncionario();
                     break;
                 case 2:
+                    filmeMenu.menuFilme();
                     break;
                 default:
-                    JOptionPane.showMessageDialog(null, "Opção                                                                   inválida");
+                    JOptionPane.showMessageDialog(null, "Opção inválida");
             }
             menu = Integer.parseInt(JOptionPane.showInputDialog(
-                "1 - Adicionar filmes"+
-                "\n2 - Adicionar funcionários"+
-                "\n3 - Sair"));
+                    "1 - Adicionar funcionários"
+                    + "\n2 - Adicionar filmes"
+                    + "\n3 - Sair"));
         }
     }
-    
+
 }

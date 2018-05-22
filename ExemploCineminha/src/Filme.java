@@ -1,3 +1,4 @@
+
 import javax.swing.JOptionPane;
 
 /**
@@ -14,7 +15,8 @@ public class Filme {
     String[] diretorFilme = new String[100];
     int[] lancamentoFilme = new int[100];
     int[] tempoCartazFilme = new int[100];
-    int atual = 0;
+    int atual = 0, anoFilmeAntigo = Integer.MAX_VALUE, anoFilmeNovo = Integer.MIN_VALUE;
+    String filmeAntigo = "", filmeNovo=""; 
 
     private void informaçãoFilme(int posicao) {
         nomesFilme[posicao] = JOptionPane.showInputDialog("Digite o nome do filme");
@@ -25,6 +27,7 @@ public class Filme {
         diretorFilme[posicao] = JOptionPane.showInputDialog("Digite o nome do Diretor");
         lancamentoFilme[posicao] = Integer.parseInt(JOptionPane.showInputDialog("Digite o ano de lançamento"));
         tempoCartazFilme[posicao] = Integer.parseInt(JOptionPane.showInputDialog("Digite o tempo em cartaz"));
+        estatisticaFilmes(lancamentoFilme[posicao], nomesFilme[posicao]);
     }
 
     public void cadastrarFilme() {
@@ -84,7 +87,7 @@ public class Filme {
 
     public void apresentarInformacao(int i) {
         JOptionPane.showMessageDialog(null,
-                "Nome filme: " +  nomesFilme[i]
+                "Nome filme: " + nomesFilme[i]
                 + "\nFaixa etária: " + faixaEtaria[i]
                 + "\nPreço ingresso: " + precosFilme[i]
                 + "\nDuração do filme: " + horaFilme[i]
@@ -92,6 +95,26 @@ public class Filme {
                 + "\nNome Diretor: " + diretorFilme[i]
                 + "\nAno lançamento: " + lancamentoFilme[i]
                 + "\nDuração em cartaz: " + tempoCartazFilme[i]);
-        
+
     }
+
+    public void estatisticaFilmes(int ano, String nome) {
+        if(ano<anoFilmeAntigo){
+            anoFilmeAntigo=ano;
+            filmeAntigo=nome;
+        }
+        if(ano>anoFilmeNovo){
+            anoFilmeNovo=ano;
+            filmeNovo=nome;
+        }
+    }
+    
+    public void apresentarEstatisticas() {
+        JOptionPane.showMessageDialog(null, 
+                "Quantidades de filmes: "+atual
+               +"Filme mais antigo: "+filmeAntigo+" ano:"+anoFilmeAntigo
+               +"Filme mais novo: "+filmeNovo+" ano:"+anoFilmeNovo 
+        );
+    }
+
 }

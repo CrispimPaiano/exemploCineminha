@@ -17,10 +17,11 @@ public class TelaFilme {
                 + "\n4 - Buscar pelo Ano de Lançamento"
                 + "\n5 - Listar Filmes"
                 + "\n6 - Numerar quantidades de filmes"
-                + "\n8001 - Sair"
+                + "\n7 - Estatiticas filme"
+                + "\n8 - Voltar para menu Admin"
         ));
 
-        while (menu != 8001) {
+        while (menu != 8) {
             switch (menu) {
                 case 1:
                     registroFilmes.cadastrarFilme();
@@ -40,6 +41,9 @@ public class TelaFilme {
                 case 6:
                     registroFilmes.contabilizarPeloNomeFilme();
                     break;
+                case 7:
+                    registroFilmes.apresentarEstatisticas();
+                    break;
                 default:
                     JOptionPane.showMessageDialog(null, "Opção Inválida");
             }
@@ -49,8 +53,9 @@ public class TelaFilme {
                     + "\n3 - Buscar pelo Funcionário"
                     + "\n4 - Buscar pelo Funcionário"
                     + "\n5 - Listar Funcionário"
-                    + "\n6 - Numerar quantidades Funcionário"
-                    + "\n8001 - Sair"
+                    + "\n6 - Numerar quantidades de filmes"
+                    + "\n7 - Estatiticas filme"
+                    + "\n8 - Voltar para menu Admin"
             ));
         }
     }

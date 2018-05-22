@@ -1,4 +1,3 @@
-
 import javax.swing.JOptionPane;
 
 /**
@@ -13,14 +12,14 @@ public class TelaFuncionario {
         int menu = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "1 - Cadastrar Funcionário"
                 + "\n2 - Editar Funcionário"
-                + "\n3 - Buscar pelo Funcionário"
-                + "\n4 - Buscar pelo Funcionário"
+                + "\n3 - Buscar pelo nome"
+                + "\n4 - Buscar pelo CPF"
                 + "\n5 - Listar Funcionário"
                 + "\n6 - Numerar quantidades Funcionário"
-                + "\n8001 - Sair"
+                + "\n7 - Voltar para menu Admin"
         ));
 
-        while (menu != 8001) {
+        while (menu != 7) {
             switch (menu) {
                 case 1:
                     registroFuncionario.cadastrarFuncionario();
@@ -46,11 +45,11 @@ public class TelaFuncionario {
             menu = Integer.parseInt(JOptionPane.showInputDialog(null,
                     "1 - Cadastrar Funcionário"
                     + "\n2 - Editar Funcionário"
-                    + "\n3 - Buscar pelo Funcionário"
-                    + "\n4 - Buscar pelo Funcionário"
+                    + "\n3 - Buscar pelo nome"
+                    + "\n4 - Buscar pelo CPF"
                     + "\n5 - Listar Funcionário"
                     + "\n6 - Numerar quantidades Funcionário"
-                    + "\n8001 - Sair"
+                    + "\n7 - Sair"
             ));
         }
     }
