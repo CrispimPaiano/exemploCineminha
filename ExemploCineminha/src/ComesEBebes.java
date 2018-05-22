@@ -25,7 +25,6 @@ public class ComesEBebes {
         Double[] precoComplemento = new Double[100];
         Double precoTotal = 0.0;
         int tabelaComplemento = 0;
-
         while (tabelaPedido != 3) {
 
             if (tabelaPedido == 1) {
@@ -43,13 +42,104 @@ public class ComesEBebes {
                     qtdComes = Integer.parseInt(JOptionPane.showInputDialog(
                             "Quantas pipocas pequenas quer comprar?"));
                     precoComida[i] += 20.00 * qtdComes;
-                    desejaComplementos(tabelaComidas);
-                } else if (tabelaComidas == 2) {
+                    int opcao = JOptionPane.showOptionDialog(null,
+                            "Deseja algum complemento?", "Complementos",
+                            0,
+                            JOptionPane.QUESTION_MESSAGE,
+                            null,
+                            new Object[]{
+                                "Sim", "Não"
+                            },
+                            "Sim");
+                    if (opcao == 0) {
+                        tabelaComplemento = Integer.parseInt(JOptionPane.showInputDialog(
+                                "Que sabor de calda você deseja?"
+                                + "\n1 - Caramelo - R$5,00"
+                                + "\n2 - Chocolate preto - R$3,00"
+                                + "\n3 - Chocolate branco - R$4,00"
+                                + "\n4 - Calda especial da casa - R$8,00"
+                                + "\n5 - Sair"));
 
+                        if (tabelaComplemento == 1) {
+                            precoComplemento[i] += 5.00;
+                        } else if (tabelaComplemento == 2) {
+                            precoComplemento[i] += 3.00;
+                        } else if (tabelaComplemento == 3) {
+                            precoComplemento[i] += 4.00;
+                        } else if (tabelaComplemento == 4) {
+                            precoComplemento[i] += 8.00;
+                        } else {
+
+                        }
+                    } else {
+                    }
+                } else if (tabelaComidas == 2) {
+                    int opcao = JOptionPane.showOptionDialog(null,
+                            "Deseja algum complemento?", "Complementos",
+                            0,
+                            JOptionPane.QUESTION_MESSAGE,
+                            null,
+                            new Object[]{
+                                "Sim", "Não"
+                            },
+                            "Sim");
+                    if (opcao == 0) {
+                        tabelaComplemento = Integer.parseInt(JOptionPane.showInputDialog(
+                                "Que sabor de calda você deseja?"
+                                + "\n1 - Caramelo - R$5,00"
+                                + "\n2 - Chocolate preto - R$3,00"
+                                + "\n3 - Chocolate branco - R$4,00"
+                                + "\n4 - Calda especial da casa - R$8,00"
+                                + "\n5 - Sair"));
+
+                        if (tabelaComplemento == 1) {
+                            precoComplemento[i] += 5.00;
+                        } else if (tabelaComplemento == 2) {
+                            precoComplemento[i] += 3.00;
+                        } else if (tabelaComplemento == 3) {
+                            precoComplemento[i] += 4.00;
+                        } else if (tabelaComplemento == 4) {
+                            precoComplemento[i] += 8.00;
+                        } else {
+
+                        }
+                    } else {
+                    }
                     qtdComes = Integer.parseInt(JOptionPane.showInputDialog(
                             "Quantas pipocas medias quer comprar?"));
                     precoComida[i] += 25.00 * qtdComes;
                 } else if (tabelaComidas == 3) {
+                    int opcao = JOptionPane.showOptionDialog(null,
+                            "Deseja algum complemento?", "Complementos",
+                            0,
+                            JOptionPane.QUESTION_MESSAGE,
+                            null,
+                            new Object[]{
+                                "Sim", "Não"
+                            },
+                            "Sim");
+                    if (opcao == 0) {
+                        tabelaComplemento = Integer.parseInt(JOptionPane.showInputDialog(
+                                "Que sabor de calda você deseja?"
+                                + "\n1 - Caramelo - R$5,00"
+                                + "\n2 - Chocolate preto - R$3,00"
+                                + "\n3 - Chocolate branco - R$4,00"
+                                + "\n4 - Calda especial da casa - R$8,00"
+                                + "\n5 - Sair"));
+
+                        if (tabelaComplemento == 1) {
+                            precoComplemento[i] += 5.00;
+                        } else if (tabelaComplemento == 2) {
+                            precoComplemento[i] += 3.00;
+                        } else if (tabelaComplemento == 3) {
+                            precoComplemento[i] += 4.00;
+                        } else if (tabelaComplemento == 4) {
+                            precoComplemento[i] += 8.00;
+                        } else {
+
+                        }
+                    } else {
+                    }
                     qtdComes = Integer.parseInt(JOptionPane.showInputDialog(
                             "Quantas pipocas grande quer comprar?"));
                     precoComida[i] += 30.00 * qtdComes;
@@ -103,40 +193,6 @@ public class ComesEBebes {
                     + "\n3 - Nada"));
             precoTotal = precoComida[i] + precoBebida[i];
             JOptionPane.showInputDialog("O valor total é de: " + precoTotal);
-        }
-    }
-
-    public void desejaComplementos(int pipoca) {
-        int opcao = JOptionPane.showOptionDialog(null,
-                "Deseja algum complemento?", "Complementos",
-                0,
-                JOptionPane.QUESTION_MESSAGE,
-                null,
-                new Object[]{
-                    "Sim", "Não"
-                },
-                "Sim");
-        if (opcao == 0) {
-            tabelaComplemento = Integer.parseInt(JOptionPane.showInputDialog(
-                    "Que sabor de calda você deseja?"
-                    + "\n1 - Caramelo - R$5,00"
-                    + "\n2 - Chocolate preto - R$3,00"
-                    + "\n3 - Chocolate branco - R$4,00"
-                    + "\n4 - Calda especial da casa - R$8,00"
-                    + "\n5 - Sair"));
-
-            if (tabelaComplemento == 1) {
-                precoComplemento[i] += 5.00;
-            } else if (tabelaComplemento == 2) {
-                precoComplemento[i] += 3.00;
-            } else if (tabelaComplemento == 3) {
-                precoComplemento[i] += 4.00;
-            } else if (tabelaComplemento == 4) {
-                precoComplemento[i] += 8.00;
-            } else {
-
-            }
-        } else {
         }
     }
 }
