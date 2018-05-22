@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class ComesEBebes {
 
-    public void infoPedido(int i) {
+    public void infoPedido() {
 
         int tabelaPedido = Integer.parseInt(JOptionPane.showInputDialog(
                 "O que deseja comprar?"
@@ -190,7 +190,7 @@ public class ComesEBebes {
                     + "\n2 - Bebidas"
                     + "\n3 - Nada"));
             precoTotal = precoComida + precoBebida;
-            JOptionPane.showInputDialog("O valor total é de: " + precoTotal);
         }
+        JOptionPane.showInputDialog("O valor total é de: " + precoTotal);
     }
 }

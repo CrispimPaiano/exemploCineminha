@@ -21,9 +21,12 @@ public class Principal {
         //teste.menuFilme();
         
         //--Tela Administrativa
-        menuADM menuzinho = new menuADM();
-        menuzinho.menuAdmin();
+        //menuADM menuzinho = new menuADM();
+        //menuzinho.menuAdmin();
         
+        //--Tela Comes e Bebes
+        ComesEBebes menuComesBebes = new ComesEBebes();
+        menuComesBebes.infoPedido();
     }
 
 }
