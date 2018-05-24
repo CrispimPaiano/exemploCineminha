@@ -35,7 +35,6 @@ public class Principal {
         //--Tela Assentos
         //VagaAssentos vagas = new VagaAssentos();
         //vagas.cadastrarAssentosParaFilme();
-        
     }
 
 }
