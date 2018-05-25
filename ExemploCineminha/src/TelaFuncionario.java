@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
  *
  * @author Crispim Paiano dos Santos
  */
+
 public class TelaFuncionario {
 
     Funcionario registroFuncionario = new Funcionario();

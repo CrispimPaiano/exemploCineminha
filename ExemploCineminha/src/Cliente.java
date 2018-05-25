@@ -1,5 +1,6 @@
 
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,12 +18,16 @@ public class Cliente {
     String[] temasPref = new String[100];
     String[] comesBebesPref = new String[100];
     int atual = 0;
+    VagaAssentos comprarAssentos = new VagaAssentos();
 
     public void infoCliente() {
 
         nomes[atual] = JOptionPane.showInputDialog("Qual seu nome?");
         idades[atual] = Integer.parseInt(JOptionPane.showInputDialog("Qual sua idade?"));
         temasPref[atual] = JOptionPane.showInputDialog("Seu gênero de filme preferido");
-        comesBebesPref[atual] = JOptionPane.showInputDialog("Qual sua combinação preferida                                                        de comes e bebes?");
+        comesBebesPref[atual] = JOptionPane.showInputDialog("Qual sua combinação preferida "
+                + "de comes e bebes?");
+
+        comprarAssentos.comprarAssentosParaFilme();
     }
 }
