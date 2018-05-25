@@ -17,8 +17,30 @@ public class VagaAssentos {
 
     public void comprarAssentosParaFilme() {
 
+        int precoIngresso = 0;
         int qtdIngressos = Integer.parseInt(JOptionPane.showInputDialog(
-                "Quantos assentos você quer?"));
+                "Quantos ingressos você quer?"));
+        for (int i = 0; i < qtdIngressos; i++) {
+            int tipoIngresso = JOptionPane.showOptionDialog(null,
+                    "Tabela de preços"
+                    + "\nMeia entrada - R$10,00"
+                    + "\nEntrada inteira - R$20,00",
+                    "Meia ou Inteira?",
+                    0,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    new Object[]{
+                        "Meia", "Inteira"
+                    },
+                    "Meia");
+            if (tipoIngresso == 0) {
+                precoIngresso += 10;
+            }
+            if (tipoIngresso == 1){
+                precoIngresso += 20;
+            }
+        }
+
         //int[] qtdAssentos = new int[100];
         int atual = 0;
         String[] posicao = new String[VagaAssentosAdm.assentos.length];
@@ -37,6 +59,7 @@ public class VagaAssentos {
             //String lugar = posicao[atual].substring(0,1);
         }
         JOptionPane.showMessageDialog(null, new JTextArea(gerarApresentacaoDosAssentos() + "\nL = Livre / O = Ocupado"));
+        JOptionPane.showMessageDialog(null, "O preço do ingresso é: "+precoIngresso);
     }
 
     public String gerarApresentacaoDosAssentos() {

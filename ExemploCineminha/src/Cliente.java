@@ -23,9 +23,9 @@ public class Cliente {
     public void infoCliente() {
 
         nomes[atual] = JOptionPane.showInputDialog("Qual seu nome?");
-        idades[atual] = Integer.parseInt(JOptionPane.showInputDialog("Qual sua idade?"));
-        temasPref[atual] = JOptionPane.showInputDialog("Seu gênero de filme preferido");
-        comesBebesPref[atual] = JOptionPane.showInputDialog("Qual sua combinação preferida "
+        idades[atual] = Integer.parseInt(JOptionPane.showInputDialog("Olá "+nomes[atual]+", qual sua idade?"));
+        temasPref[atual] = JOptionPane.showInputDialog("Qual seu gênero de filme preferido, "+nomes[atual]+"?");
+        comesBebesPref[atual] = JOptionPane.showInputDialog("Hey "+nomes[atual]+", qual sua combinação preferida "
                 + "de comes e bebes?");
 
         comprarAssentos.comprarAssentosParaFilme();
