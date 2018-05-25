@@ -9,8 +9,8 @@ public class Principal {
 
     public static void main(String[] args) {
 
-        //Cineminha menuPrincipal = new Cineminha();
-        //menuPrincipal.menuLogin();
+        Cineminha menuPrincipal = new Cineminha();
+        menuPrincipal.menuLogin();
 
         //Tela de cadastro Funcionário
         //TelaFuncionario teste = new TelaFuncionario();
@@ -21,8 +21,8 @@ public class Principal {
         //teste.menuFilme();
         
         //--Tela Administrativa
-        menuADM menuzinho = new menuADM();
-        menuzinho.menuAdmin();
+        //menuADM menuzinho = new menuADM();
+        //menuzinho.menuAdmin();
         
         //--Tela Funcionario
         //menuFuncionario menuzinhofun = new menuFuncionario();

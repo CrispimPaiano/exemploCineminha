@@ -48,11 +48,11 @@ public class TelaFilme {
                     JOptionPane.showMessageDialog(null, "Opção Inválida");
             }
             menu = Integer.parseInt(JOptionPane.showInputDialog(null,
-                    "1 - Cadastrar Funcionário"
-                    + "\n2 - Editar Funcionário"
-                    + "\n3 - Buscar pelo Funcionário"
-                    + "\n4 - Buscar pelo Funcionário"
-                    + "\n5 - Listar Funcionário"
+                    "1 - Cadastrar Filme"
+                    + "\n2 - Editar Filme"
+                    + "\n3 - Buscar pelo Nome"
+                    + "\n4 - Buscar pelo Ano de Lançamento"
+                    + "\n5 - Listar Filmes"
                     + "\n6 - Numerar quantidades de filmes"
                     + "\n7 - Estatiticas filme"
                     + "\n8 - Voltar para menu Admin"

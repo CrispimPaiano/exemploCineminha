@@ -1,3 +1,4 @@
+
 import javax.swing.JOptionPane;
 
 /**
@@ -15,27 +16,42 @@ public class Funcionario {
     int[] horaTrabalhadoFuncionario = new int[100];
     char[] sexoFuncionario = new char[100];
     String[] beneficiosFuncionario = new String[100];
-    int atual=0;
+    int atual = 0;
 
     private void informaçãoFuncionario(int posicao) {
-        nomeFuncionario[posicao] = JOptionPane.showInputDialog("Digite o nome do funcionário");
-        idadeFuncionario[posicao] = Integer.parseInt(JOptionPane.showInputDialog(nomeFuncionario[posicao] + ": digite a sua idade \"Ex.: 18\""));
-        cpfFuncionario[posicao] = JOptionPane.showInputDialog(nomeFuncionario[posicao] + ": digite o seu CPF").replace(".", "").replace("-", "");
-        rgFuncionario[posicao] = JOptionPane.showInputDialog(nomeFuncionario[posicao] + ": digite o seu RG");
-        cargoFuncionario[posicao] = JOptionPane.showInputDialog("Digite o seu cargo");
-        valorHoraFuncionario[posicao] = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor recebido por hora(R$)"));
-        horaTrabalhadoFuncionario[posicao] = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de horas trabalhadas"));
-        sexoFuncionario[posicao] = JOptionPane.showInputDialog(null,
-                "Selecione o sexo do funcionário",
-                "Sexo",
-                JOptionPane.QUESTION_MESSAGE,
-                null,
-                new Object[]{
-                    "M", "F"
-                },
-                ""
-        ).toString().charAt(0);
-        beneficiosFuncionario[posicao] = JOptionPane.showInputDialog("Digite o seus benefícios");
+        try {
+            nomeFuncionario[posicao] = JOptionPane.showInputDialog("Digite o nome do funcionário");
+
+            while (nomeFuncionario[posicao].trim().equals("")
+                    || nomeFuncionario[posicao].trim().length() < 4) {
+                JOptionPane.showMessageDialog(null,
+                        "O nome do funcionário deve conter no mínimo 4 caracteres");
+                nomeFuncionario[posicao] = JOptionPane.showInputDialog(
+                        "Digite o nome do filme novamente",
+                        nomeFuncionario[posicao] != null ? nomeFuncionario[posicao] : "");
+
+            }
+
+            idadeFuncionario[posicao] = Integer.parseInt(JOptionPane.showInputDialog(nomeFuncionario[posicao] + ": digite a sua idade \"Ex.: 18\""));
+            cpfFuncionario[posicao] = JOptionPane.showInputDialog(nomeFuncionario[posicao] + ": digite o seu CPF").replace(".", "").replace("-", "");
+            rgFuncionario[posicao] = JOptionPane.showInputDialog(nomeFuncionario[posicao] + ": digite o seu RG").replace(".", "").replace("-", "");
+            cargoFuncionario[posicao] = JOptionPane.showInputDialog("Digite o seu cargo");
+            valorHoraFuncionario[posicao] = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor recebido por hora(R$)"));
+            horaTrabalhadoFuncionario[posicao] = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de horas trabalhadas"));
+            sexoFuncionario[posicao] = JOptionPane.showInputDialog(null,
+                    "Selecione o sexo do funcionário",
+                    "Sexo",
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    new Object[]{
+                        "M", "F"
+                    },
+                    ""
+            ).toString().charAt(0);
+            beneficiosFuncionario[posicao] = JOptionPane.showInputDialog("Digite o seus benefícios");
+        } catch (Exception erro) {
+            JOptionPane.showMessageDialog(null, "Informação inválida ou não inserida!");
+        }
     }
 
     public void cadastrarFuncionario() {
@@ -52,44 +68,60 @@ public class Funcionario {
     }
 
     public void editarFuncionario() {
-        String busca = JOptionPane.showInputDialog("Digite o nome do funcionário para editar");
-        for (int i = 0; i < atual; i++) {
-            if (nomeFuncionario[i].equals(busca)) {
-                informaçãoFuncionario(i);
-                return;
+        if (atual > 0) {
+            String busca = JOptionPane.showInputDialog("Digite o nome do funcionário para editar");
+            for (int i = 0; i < atual; i++) {
+                if (nomeFuncionario[i].equals(busca)) {
+                    informaçãoFuncionario(i);
+                    return;
+                }
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "Nenhum funcionário cadastrado!");
         }
     }
 
     public void buscarPeloNome() {
-        String busca = JOptionPane.showInputDialog("Digite o nome parcial para a busca");
-        for (int i = 0; i < atual; i++) {
-            if (nomeFuncionario[i].contains(busca)) {
-                apresentarInformacao(i);
-            }
+        if (atual > 0) {
+            String busca = JOptionPane.showInputDialog("Digite o nome parcial para a busca");
+            for (int i = 0; i < atual; i++) {
+                if (nomeFuncionario[i].contains(busca)) {
+                    apresentarInformacao(i);
+                }
 
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Nenhum funcionário cadastrado!");
         }
     }
 
     public void contabilizarPeloNomeFuncionario() {
-        String busca = JOptionPane.showInputDialog("Digite o nome parcial para a busca");
-        int quantidadeRegistros = 0;
-        for (int i = 0; i < atual; i++) {
-            if (nomeFuncionario[i].contains(busca)) {
-                quantidadeRegistros++;
+        if (atual > 0) {
+            String busca = JOptionPane.showInputDialog("Digite o nome parcial para a busca");
+            int quantidadeRegistros = 0;
+            for (int i = 0; i < atual; i++) {
+                if (nomeFuncionario[i].contains(busca)) {
+                    quantidadeRegistros++;
+                }
             }
+            JOptionPane.showMessageDialog(null, "A quantidade de " + busca + " é: " + quantidadeRegistros);
+        } else {
+            JOptionPane.showMessageDialog(null, "Nenhum funcionário cadastrado!");
         }
-        JOptionPane.showMessageDialog(null, "A quantidade de " + busca + " é: " + quantidadeRegistros);
     }
 
     public void buscarPeloCPF() {
-        String buscaCPF = JOptionPane.showInputDialog("Digite o ano de lançamento para busca");
-        for (int i = 0; i < atual; i++) {
-            if (cpfFuncionario[i].equals(buscaCPF)) {
-                apresentarInformacao(i);
-                return;
+        if (atual > 0) {
+            String buscaCPF = JOptionPane.showInputDialog("Digite o ano de lançamento para busca");
+            for (int i = 0; i < atual; i++) {
+                if (cpfFuncionario[i].equals(buscaCPF)) {
+                    apresentarInformacao(i);
+                    return;
+                }
+                JOptionPane.showMessageDialog(null, "CPF não encontrado");
             }
-            JOptionPane.showMessageDialog(null, "CPF não encontrado");
+        } else {
+            JOptionPane.showMessageDialog(null, "Nenhum funcionário cadastrado!");
         }
     }
 
