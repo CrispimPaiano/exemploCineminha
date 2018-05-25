@@ -7,12 +7,14 @@ import javax.swing.JOptionPane;
  */
 public class Principal {
 
+    
     public static void main(String[] args) {
 
-        //Cineminha menuPrincipal = new Cineminha();
-        //menuPrincipal.menuLogin();
+        //--Tela de Login
+        Cineminha menuPrincipal = new Cineminha();
+        menuPrincipal.menuLogin();
 
-        //Tela de cadastro Funcionário
+        //--Tela de cadastro Funcionário
         //TelaFuncionario teste = new TelaFuncionario();
         //teste.menuFuncionario();
         
@@ -21,8 +23,8 @@ public class Principal {
         //teste.menuFilme();
         
         //--Tela Administrativa
-        menuADM menuzinho = new menuADM();
-        menuzinho.menuAdmin();
+        //menuADM menuzinho = new menuADM();
+        //menuzinho.menuAdmin();
         
         //--Tela Funcionario
         //menuFuncionario menuzinhofun = new menuFuncionario();
