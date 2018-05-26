@@ -12,25 +12,43 @@ public class menuADM {
 
     public void menuAdmin() {
 
-        int menu = Integer.parseInt(JOptionPane.showInputDialog(
-                "1 - Adicionar funcionários"
-                + "\n2 - Adicionar filmes"
-                + "\n3 - Sair"));
-        while (menu != 3) {
+        int menu = JOptionPane.showOptionDialog(
+                null,
+                "Selecione o menu desejado:", //messagem de texto
+                "MENU ADM", //título
+                0, //opcao sim
+                JOptionPane.PLAIN_MESSAGE, //icone 
+                null,
+                new Object[]{ //botões
+                    "Funcionários", "Filmes","Voltar Menu Principal"//Opções
+                },
+                ""
+        );
+        while (menu != 2) {
             switch (menu) {
-                case 1:
+                case 0:
                     funcionarioMenu.menuFuncionario();
                     break;
-                case 2:
+                case 1:
                     filmeMenu.menuFilme();
                     break;
+                case JOptionPane.CLOSED_OPTION:
+                    return;
                 default:
                     JOptionPane.showMessageDialog(null, "Opção inválida");
             }
-            menu = Integer.parseInt(JOptionPane.showInputDialog(
-                    "1 - Adicionar funcionários"
-                    + "\n2 - Adicionar filmes"
-                    + "\n3 - Sair"));
+            menu = JOptionPane.showOptionDialog(
+                null,
+                "Selecione o menu desejado:", //messagem de texto
+                "MENU ADM", //título
+                0, //opcao sim
+                JOptionPane.PLAIN_MESSAGE, //icone 
+                null,
+                new Object[]{ //botões
+                    "Funcionários", "Filmes","Voltar Menu Principal"//Opções
+                },
+                ""
+        );
         }
     }
 

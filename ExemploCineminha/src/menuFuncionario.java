@@ -6,40 +6,54 @@ import javax.swing.JOptionPane;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Leonardo Airam Vieira
  */
 public class menuFuncionario {
-    
+
     Cliente menuCliente = new Cliente();
     ComesEBebes menuComeBebe = new ComesEBebes();
-    
-    public void menuFunc(){
-        
-        int menu = Integer.parseInt(JOptionPane.showInputDialog(
-                "1 - Venda ingresso"+
-                "\n2 - Venda comes e bebes"+
-                "\n3 - Sair"));
-        while(menu != 3){
+
+    public void menuFunc() {
+        int menu = JOptionPane.showOptionDialog(
+                null,
+                "Selecione o menu desejado", //messagem de texto
+                "MENU FUNCIONÁRIO", //título
+                0, //opcao sim
+                JOptionPane.PLAIN_MESSAGE, //icone 
+                null,
+                new Object[]{ //botões
+                    "Venda ingresso", "Venda comes e bebes", "Sair"},
+                ""
+        );
+
+        while (menu != 2) {
             switch (menu) {
-                case 1: 
+                case 0:
                     menuCliente.infoCliente();
                     break;
-                    
-                case 2:
+
+                case 1:
                     menuComeBebe.infoPedido();
                     break;
-                    
+                case JOptionPane.CLOSED_OPTION:
+                    return;
                 default:
-                    JOptionPane.showMessageDialog(null, "Opção                                                                   inválida");
+                    JOptionPane.showMessageDialog(null, "Opção inválida");
             }
-            menu = Integer.parseInt(JOptionPane.showInputDialog(
-                "1 - Venda ingresso"+
-                "\n2 - Venda comes e bebes "+
-                "\n3 - Sair"));
+            menu = JOptionPane.showOptionDialog(
+                    null,
+                    "Selecione o menu desejado", //messagem de texto
+                    "MENU FUNCIONÁRIO", //título
+                    0, //opcao sim
+                    JOptionPane.PLAIN_MESSAGE, //icone 
+                    null,
+                    new Object[]{ //botões
+                        "Venda ingresso", "Venda comes e bebes", "Sair"},
+                    ""
+            );
         }
     }
-    
+
 }
