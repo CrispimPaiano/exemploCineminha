@@ -9,7 +9,6 @@ public class Filme {
 
     String[] nomesFilme = new String[100];
     int[] faixaEtaria = new int[100];
-    double[] precosFilme = new double[100];
     int[] horaFilme = new int[100];
     String[] generoFilme = new String[100];
     String[] diretorFilme = new String[100];
@@ -33,9 +32,9 @@ public class Filme {
             }
 
             faixaEtaria[posicao] = Integer.parseInt(JOptionPane.showInputDialog(nomesFilme[posicao] + ": digite a faixa etária \"Ex.: 18\""));
-            precosFilme[posicao] = Double.parseDouble(JOptionPane.showInputDialog(nomesFilme[posicao] + ": digite o preço do ingresso").replace(" ", "").replace("R$", "").replace(".", "").replace(",", "."));
             horaFilme[posicao] = Integer.parseInt(JOptionPane.showInputDialog(nomesFilme[posicao] + ": digite o tempo de duração"));
-            generoFilme[posicao] = JOptionPane.showInputDialog("Digite o gênero do filme");
+            generoFilme[posicao] = JOptionPane.showInputDialog(null,"Selecione o tipo de gênero do filme","Genêro",JOptionPane.PLAIN_MESSAGE,null,
+                    new Object[]{"Ação","Aventura","Romance","Comédia","Terror","Suspense","Outros"},"").toString();
             diretorFilme[posicao] = JOptionPane.showInputDialog("Digite o nome do Diretor");
             lancamentoFilme[posicao] = Integer.parseInt(JOptionPane.showInputDialog("Digite o ano de lançamento"));
             tempoCartazFilme[posicao] = Integer.parseInt(JOptionPane.showInputDialog("Digite o tempo em cartaz. \"Duração\""));
@@ -112,7 +111,6 @@ public class Filme {
         JOptionPane.showMessageDialog(null,
                 "Nome filme: " + nomesFilme[i]
                 + "\nFaixa etária: " + faixaEtaria[i]
-                + "\nPreço ingresso: " + precosFilme[i]
                 + "\nDuração do filme: " + horaFilme[i]
                 + "\nGênero: " + generoFilme[i]
                 + "\nNome Diretor: " + diretorFilme[i]

@@ -9,6 +9,20 @@ public class ComesEBebes {
 
     public void infoPedido() {
 
+<<<<<<< HEAD
+=======
+        int tabelaPedido = JOptionPane.showOptionDialog(
+                null,
+                "Selecione o menu desejado", //messagem de texto
+                "MENU COMESEBEBES", //título
+                0, //opcao sim
+                JOptionPane.PLAIN_MESSAGE, //icone 
+                null,
+                new Object[]{ //botões
+                    "Comidas", "Bebidas", "Nada"},
+                ""
+        );
+>>>>>>> f97f206685cd0638d800c43d05a6bd8114fee6a4
         int qtdComes = 0;
         int qtdBebes = 0;
         Double precoComida = 0.0;
@@ -16,6 +30,7 @@ public class ComesEBebes {
         Double precoTotal = 0.0;
         int tabelaComplemento = 0;
         int qtdComplementos = 0;
+<<<<<<< HEAD
         int tabelaPedido = JOptionPane.showOptionDialog(null,
                 "Comes ou Bebes?", "Vendas",
                 0,
@@ -25,6 +40,8 @@ public class ComesEBebes {
                     "Comes", "Bebes", "Completar Venda"
                 },
                 "Comes");
+=======
+>>>>>>> f97f206685cd0638d800c43d05a6bd8114fee6a4
         while (tabelaPedido != 2) {
 
             if (tabelaPedido == 0) {
@@ -235,6 +252,7 @@ public class ComesEBebes {
             } else {
                 JOptionPane.showMessageDialog(null, "Opção inválida");
             }
+<<<<<<< HEAD
             tabelaPedido = JOptionPane.showOptionDialog(null,
                 "Algo mais?", "Vendas",
                 0,
@@ -244,6 +262,19 @@ public class ComesEBebes {
                     "Comes", "Bebes", "Completar Venda"
                 },
                 "Comes");
+=======
+            tabelaPedido = JOptionPane.showOptionDialog(
+                    null,
+                    "Selecione o menu desejado", //messagem de texto
+                    "MENU COMESEBEBES", //título
+                    0, //opcao sim
+                    JOptionPane.PLAIN_MESSAGE, //icone 
+                    null,
+                    new Object[]{ //botões
+                        "Comidas", "Bebidas", "Nada"},
+                    ""
+            );
+>>>>>>> f97f206685cd0638d800c43d05a6bd8114fee6a4
             precoTotal = precoComida + precoBebida;
         }
         if (precoTotal == 0) {
