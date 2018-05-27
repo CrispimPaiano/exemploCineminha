@@ -9,11 +9,6 @@ public class ComesEBebes {
 
     public void infoPedido() {
 
-        int tabelaPedido = Integer.parseInt(JOptionPane.showInputDialog(
-                "O que deseja comprar?"
-                + "\n1 - Comidas"
-                + "\n2 - Bebidas"
-                + "\n3 - Nada"));
         int qtdComes = 0;
         int qtdBebes = 0;
         Double precoComida = 0.0;
@@ -21,9 +16,18 @@ public class ComesEBebes {
         Double precoTotal = 0.0;
         int tabelaComplemento = 0;
         int qtdComplementos = 0;
-        while (tabelaPedido != 3) {
+        int tabelaPedido = JOptionPane.showOptionDialog(null,
+                "Comes ou Bebes?", "Vendas",
+                0,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                new Object[]{
+                    "Comes", "Bebes", "Completar Venda"
+                },
+                "Comes");
+        while (tabelaPedido != 2) {
 
-            if (tabelaPedido == 1) {
+            if (tabelaPedido == 0) {
                 int tabelaComidas = Integer.parseInt(JOptionPane.showInputDialog(
                         "Que petisquinhos deseja?"
                         + "\n1 - Pipoca P - R$20,00"
@@ -62,8 +66,8 @@ public class ComesEBebes {
                                 JOptionPane.showMessageDialog(null,
                                         "Você tem menos pipocas do que complementos");
                             } else if (qtdComplementos == qtdComes) {
-                                precoComida += 5.00*qtdComplementos;
-                            }else{
+                                precoComida += 5.00 * qtdComplementos;
+                            } else {
                                 precoComida += 5.00;
                             }
                         } else if (tabelaComplemento == 2) {
@@ -73,8 +77,8 @@ public class ComesEBebes {
                                 JOptionPane.showMessageDialog(null,
                                         "Você tem menos pipocas do que complementos");
                             } else if (qtdComplementos == qtdComes) {
-                                precoComida += 3.00*qtdComplementos;
-                            }else{
+                                precoComida += 3.00 * qtdComplementos;
+                            } else {
                                 precoComida += 3.00;
                             }
                         } else if (tabelaComplemento == 3) {
@@ -84,8 +88,8 @@ public class ComesEBebes {
                                 JOptionPane.showMessageDialog(null,
                                         "Você tem menos pipocas do que complementos");
                             } else if (qtdComplementos == qtdComes) {
-                                precoComida += 4.00*qtdComplementos;
-                            }else{
+                                precoComida += 4.00 * qtdComplementos;
+                            } else {
                                 precoComida += 4.00;
                             }
                         } else if (tabelaComplemento == 4) {
@@ -95,8 +99,8 @@ public class ComesEBebes {
                                 JOptionPane.showMessageDialog(null,
                                         "Você tem menos pipocas do que complementos");
                             } else if (qtdComplementos == qtdComes) {
-                                precoComida += 8.00*qtdComplementos;
-                            }else{
+                                precoComida += 8.00 * qtdComplementos;
+                            } else {
                                 precoComida += 8.00;
                             }
                         } else {
@@ -188,7 +192,7 @@ public class ComesEBebes {
                 } else if (tabelaComidas > 7) {
                     JOptionPane.showMessageDialog(null, "Opção inválida");
                 }
-            } else if (tabelaPedido == 2) {
+            } else if (tabelaPedido == 1) {
                 int tabelaBebidas = Integer.parseInt(JOptionPane.showInputDialog(
                         "Que petisquinhos deseja?"
                         + "\n1 - Refrigerante P - R$7,99"
@@ -226,16 +230,20 @@ public class ComesEBebes {
                 } else if (tabelaBebidas > 7) {
                     JOptionPane.showMessageDialog(null, "Opção inválida");
                 }
-            } else if (tabelaPedido == 3) {
+            } else if (tabelaPedido == 2) {
                 JOptionPane.showMessageDialog(null, "Obrigado pela preferência");
             } else {
                 JOptionPane.showMessageDialog(null, "Opção inválida");
             }
-            tabelaPedido = Integer.parseInt(JOptionPane.showInputDialog(
-                    "Deseja algo a mais??"
-                    + "\n1 - Comidas"
-                    + "\n2 - Bebidas"
-                    + "\n3 - Nada"));
+            tabelaPedido = JOptionPane.showOptionDialog(null,
+                "Algo mais?", "Vendas",
+                0,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                new Object[]{
+                    "Comes", "Bebes", "Completar Venda"
+                },
+                "Comes");
             precoTotal = precoComida + precoBebida;
         }
         if (precoTotal == 0) {

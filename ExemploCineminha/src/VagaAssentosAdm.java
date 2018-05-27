@@ -8,13 +8,13 @@ import javax.swing.JOptionPane;
  */
 /**
  *
- * @author Alunos
+ * @author Leonardo Airam
  */
 public class VagaAssentosAdm {
 
     static String[][] assentos = null;
 
-     static {
+    static {
         int qtdAssLinha = Integer.parseInt(JOptionPane.showInputDialog("Quantos assentos existe por linha?"));
         int qtdAssColuna = Integer.parseInt(JOptionPane.showInputDialog("Quantos assentos existe por coluna?"));
         int qtdAssentos = qtdAssColuna * qtdAssLinha;
@@ -29,5 +29,4 @@ public class VagaAssentosAdm {
             ini++;
         }
     }
-
 }

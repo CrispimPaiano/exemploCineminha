@@ -18,27 +18,44 @@ public class menuFuncionario {
     
     public void menuFunc(){
         
-        int menu = Integer.parseInt(JOptionPane.showInputDialog(
+                    //int menu = Integer.parseInt(JOptionPane.showInputDialog(
+                    //"Quantas pipocas pequenas quer comprar?"));
+                    //precoComida += 20.00 * qtdComes;
+                    int menu = JOptionPane.showOptionDialog(null,
+                            "Vender ingressos ou comes e bebes?", "Vendas",
+                            0,
+                            JOptionPane.QUESTION_MESSAGE,
+                            null,
+                            new Object[]{
+                                "Ingressos", "Comes e bebes", "Voltar"
+                            },
+                            "Ingressos");
+        /*int menu = Integer.parseInt(JOptionPane.showInputDialog(
                 "1 - Venda ingresso"+
                 "\n2 - Venda comes e bebes"+
-                "\n3 - Sair"));
-        while(menu != 3){
+                "\n3 - Sair"));*/
+        while(menu != 2){
             switch (menu) {
-                case 1: 
+                case 0: 
                     menuCliente.infoCliente();
                     break;
                     
-                case 2:
+                case 1:
                     menuComeBebe.infoPedido();
                     break;
                     
                 default:
-                    JOptionPane.showMessageDialog(null, "Opção                                                                   inválida");
+                    JOptionPane.showMessageDialog(null, "Opção inválida");
             }
-            menu = Integer.parseInt(JOptionPane.showInputDialog(
-                "1 - Venda ingresso"+
-                "\n2 - Venda comes e bebes "+
-                "\n3 - Sair"));
+            menu = JOptionPane.showOptionDialog(null,
+                            "Vender ingressos ou comes e bebes?", "Vendas",
+                            0,
+                            JOptionPane.QUESTION_MESSAGE,
+                            null,
+                            new Object[]{
+                                "Ingressos", "Comes e bebes", "Voltar"
+                            },
+                            "Ingressos");
         }
     }
     

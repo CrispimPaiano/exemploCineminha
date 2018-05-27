@@ -9,7 +9,7 @@ import javax.swing.JTextArea;
  */
 /**
  *
- * @author Alunos
+ * @author Leonardo Airam
  */
 public class VagaAssentos {
 
@@ -18,8 +18,21 @@ public class VagaAssentos {
     public void comprarAssentosParaFilme() {
 
         int precoIngresso = 0;
-        int qtdIngressos = Integer.parseInt(JOptionPane.showInputDialog(
-                "Quantos ingressos você quer?"));
+        int qtdIngressos = 0;
+        try{
+        qtdIngressos = Integer.parseInt(JOptionPane.showInputDialog(
+                "Quantos ingressos você quer?\nLimite de compra: 6").trim());
+            while(qtdIngressos > 6){
+                JOptionPane.showMessageDialog(null, "Limite de ingressos atingido"
+                        + "\nA regra da empresa só permite a compra de 6 Ingressos por vez");
+                qtdIngressos = Integer.parseInt(JOptionPane.showInputDialog(
+                        "Digite a quantidade de ingressos que deseja novamente",
+                        qtdIngressos != 0 ? qtdIngressos : ""));
+            }
+        }catch (Exception erro) {
+            JOptionPane.showMessageDialog(null, "Informação inválida ou não inserida!");
+        }
+        
         for (int i = 0; i < qtdIngressos; i++) {
             int tipoIngresso = JOptionPane.showOptionDialog(null,
                     "Tabela de preços"
@@ -59,7 +72,7 @@ public class VagaAssentos {
             //String lugar = posicao[atual].substring(0,1);
         }
         JOptionPane.showMessageDialog(null, new JTextArea(gerarApresentacaoDosAssentos() + "\nL = Livre / O = Ocupado"));
-        JOptionPane.showMessageDialog(null, "O preço do ingresso é: "+precoIngresso);
+        JOptionPane.showMessageDialog(null, "O preço do ingresso é: R$"+precoIngresso);
     }
 
     public String gerarApresentacaoDosAssentos() {
