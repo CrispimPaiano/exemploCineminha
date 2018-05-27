@@ -39,7 +39,7 @@ public class Cliente {
         while (1 == 1) {
             try {
                 int idade = Integer.parseInt(JOptionPane.showInputDialog
-                ("Digite a sua idade"));
+                ("Olá "+nomes[atual]+"igite a sua idade"));
                 if(idade >= 0 && idade <= 130){
                     break;
                 }
