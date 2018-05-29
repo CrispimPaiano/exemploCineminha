@@ -243,17 +243,6 @@ public class ComesEBebes {
                     "Comes", "Bebes", "Completar Venda"
                 },
                 "Comes");
-            tabelaPedido = JOptionPane.showOptionDialog(
-                    null,
-                    "Selecione o menu desejado", //messagem de texto
-                    "MENU COMESEBEBES", //título
-                    0, //opcao sim
-                    JOptionPane.PLAIN_MESSAGE, //icone 
-                    null,
-                    new Object[]{ //botões
-                        "Comidas", "Bebidas", "Nada"},
-                    ""
-            );
             precoTotal = precoComida + precoBebida;
         }
         if (precoTotal == 0) {
