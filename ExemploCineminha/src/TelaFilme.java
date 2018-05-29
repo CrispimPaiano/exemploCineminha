@@ -9,51 +9,51 @@ public class TelaFilme {
 
     Filme registroFilmes = new Filme();
 
-    /*int menu = Integer.parseInt(JOptionPane.showInputDialog(null,
--                "1 - Cadastrar Filme"
--                + "\n2 - Editar Filme"
--                + "\n3 - Buscar pelo Nome"
--                + "\n4 - Buscar pelo Ano de Lançamento"
--                + "\n5 - Listar Filmes"
--                + "\n6 - Numerar quantidades de filmes"
--                + "\n7 - Estatiticas filme"
--                + "\n8 - Voltar para menu Admin"
--        ));*/
     public void menuFilme() {
-        int menu = JOptionPane.showOptionDialog(
-                null,
-                "Selecione o menu desejado:", //messagem de texto
-                "MENU FILME", //título
-                0, //opcao sim
-                JOptionPane.PLAIN_MESSAGE, //icone 
-                null,
-                new Object[]{ //botões
-                    "Cadastrar Filme", "Editar Filme", "Buscar por Nome", "Buscar por Ano de Lançamento", "Listar Filmes", "Quantidades de filmes", "Estatiticas filme", "Voltar para menu Admin"//Opções
-                },
-                ""
-        );
+        int menu = Integer.parseInt(JOptionPane.showInputDialog(null,
+                "1 - Cadastrar Filme"
+                 +"\n2 - Editar Filme"
+                 +"\n3 - Buscar pelo Nome"
+                 +"\n4 - Buscar pelo Ano de Lançamento"
+                 +"\n5 - Listar Filmes"
+                 +"\n6 - Numerar quantidades de filmes"
+                 +"\n7 - Estatiticas filme"
+                 +"\n8 - Voltar para menu Admin"
+                ));
+        /*int menu = JOptionPane.showOptionDialog(
+         null,
+         "Selecione o menu desejado:", //messagem de texto
+         "MENU FILME", //título
+         0, //opcao sim
+         JOptionPane.PLAIN_MESSAGE, //icone 
+         null,
+         new Object[]{ //botões
+         "Cadastrar Filme", "Editar Filme", "Buscar por Nome", "Buscar por Ano de Lançamento", "Listar Filmes", "Quantidades de filmes", "Estatiticas filme", "Voltar para menu Admin"//Opções
+         },
+         ""
+         );*/
 
-        while (menu != 7) {
+        while (menu != 8) {
             switch (menu) {
-                case 0:
+                case 1:
                     registroFilmes.cadastrarFilme();
                     break;
-                case 1:
+                case 2:
                     registroFilmes.editar();
                     break;
-                case 2:
+                case 3:
                     registroFilmes.buscarPeloNome();
                     break;
-                case 3:
+                case 4:
                     registroFilmes.buscarPeloLancamento();
                     break;
-                case 4:
+                case 5:
                     registroFilmes.listarFilme();
                     break;
-                case 5:
+                case 6:
                     registroFilmes.contabilizarPeloNomeFilme();
                     break;
-                case 6:
+                case 7:
                     registroFilmes.apresentarEstatisticas();
                     break;
                 case JOptionPane.CLOSED_OPTION:
@@ -61,28 +61,26 @@ public class TelaFilme {
                 default:
                     JOptionPane.showMessageDialog(null, "Opção Inválida");
             }
-            menu = JOptionPane.showOptionDialog(
-                    null,
-                    "Selecione o menu desejado:", //messagem de texto
-                    "MENU FILME", //título
-                    0, //opcao sim
-                    JOptionPane.PLAIN_MESSAGE, //icone 
-                    null,
-                    new Object[]{ //botões
-                        "Cadastrar Filme", "Editar Filme", "Buscar pelo Nome", "Buscar pelo Ano de Lançamento", "Listar Filmes", "Numerar quantidades de filmes", "Estatiticas filme", "Voltar para menu Admin"//Opções
-                    },
-                    ""
-            );
+            menu = Integer.parseInt(JOptionPane.showInputDialog(null,
+                "1 - Cadastrar Filme"
+                 +"\n2 - Editar Filme"
+                 +"\n3 - Buscar pelo Nome"
+                 +"\n4 - Buscar pelo Ano de Lançamento"
+                 +"\n5 - Listar Filmes"
+                 +"\n6 - Numerar quantidades de filmes"
+                 +"\n7 - Estatiticas filme"
+                 +"\n8 - Voltar para menu Admin"
+                ));
             /*menu = Integer.parseInt(JOptionPane.showInputDialog(null,
--                "1 - Cadastrar Filme"
--                + "\n2 - Editar Filme"
--                + "\n3 - Buscar pelo Nome"
--                + "\n4 - Buscar pelo Ano de Lançamento"
--                + "\n5 - Listar Filmes"
--                + "\n6 - Numerar quantidades de filmes"
--                + "\n7 - Estatiticas filme"
--                + "\n8 - Voltar para menu Admin"
--        ));*/
+             -                "1 - Cadastrar Filme"
+             -                + "\n2 - Editar Filme"
+             -                + "\n3 - Buscar pelo Nome"
+             -                + "\n4 - Buscar pelo Ano de Lançamento"
+             -                + "\n5 - Listar Filmes"
+             -                + "\n6 - Numerar quantidades de filmes"
+             -                + "\n7 - Estatiticas filme"
+             -                + "\n8 - Voltar para menu Admin"
+             -        ));*/
         }
     }
 }
