@@ -14,20 +14,39 @@ import javax.swing.JTextArea;
 public class Cliente {
 
     String[] nomes = new String[100];
-    int[] idades = new int[100];
-    String[] temasPref = new String[100];
-    String[] comesBebesPref = new String[100];
+    int idade = 0;
     int atual = 0;
     VagaAssentos comprarAssentos = new VagaAssentos();
 
     public void infoCliente() {
 
-        nomes[atual] = JOptionPane.showInputDialog("Qual seu nome?");
-        idades[atual] = Integer.parseInt(JOptionPane.showInputDialog("Qual sua idade?"));
-        temasPref[atual] = JOptionPane.showInputDialog("Seu gênero de filme preferido");
-        comesBebesPref[atual] = JOptionPane.showInputDialog("Qual sua combinação preferida "
-                + "de comes e bebes?");
+        try {
+            nomes[atual] = JOptionPane.showInputDialog("Digite o nome do usuário");
 
+            while (nomes[atual].trim().equals("")
+                    || nomes[atual].trim().length() < 4) {
+                JOptionPane.showMessageDialog(null,
+                        "O nome do usuário deve conter no mínimo 4 caracteres");
+                nomes[atual] = JOptionPane.showInputDialog(
+                        "Digite o nome do usuário novamente",
+                        nomes[atual] != null ? nomes[atual] : "");
+
+            }
+        } catch (Exception erro) {
+            JOptionPane.showMessageDialog(null, "Informação inválida ou não inserida");
+
+        }
+        while (1 == 1) {
+            try {
+                int idade = Integer.parseInt(JOptionPane.showInputDialog
+                ("Olá "+nomes[atual]+"igite a sua idade"));
+                if(idade >= 0 && idade <= 130){
+                    break;
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Idade invalida, digite apenas números");
+            }
+        }
         comprarAssentos.comprarAssentosParaFilme();
     }
 }
