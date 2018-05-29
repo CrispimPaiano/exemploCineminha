@@ -60,7 +60,7 @@ public class VagaAssentos {
 
         for (int i = 0; i < qtdIngressos; i++, atual++) {
 
-            posicao[atual] = JOptionPane.showInputDialog(null, new JTextArea(gerarApresentacaoDosAssentos() + "\nL = Livre / O = Ocupado"));
+            posicao[atual] = JOptionPane.showInputDialog(null, new JTextArea(gerarApresentacaoDosAssentos() + "\nL = Livre / O = Ocupado")).toUpperCase();
             int linhateste = ((int) posicao[atual].charAt(0)) - 65;
             int colunateste = Integer.valueOf(posicao[atual].substring(1)) - 1;
             VagaAssentosAdm.assentos[linhateste][colunateste] = "O";
