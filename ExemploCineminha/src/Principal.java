@@ -10,10 +10,7 @@ public class Principal {
     
     public static void main(String[] args) {
 
-<<<<<<< HEAD
-=======
         //--Tela de Login
->>>>>>> aa26388236d7286a4b03cfdd3c26fdc02e5b2243
         Cineminha menuPrincipal = new Cineminha();
         menuPrincipal.menuLogin();
 
